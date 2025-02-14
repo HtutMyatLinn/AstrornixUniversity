@@ -29,16 +29,22 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <a href=""
-                    class="leading-4 font-medium text-blue-800 hover:text-blue-900 border-l-2 py-2 pl-4 transition-colors duration-200">Contribute
-                    your
-                    article</a>
+                @if (Auth::check())
+                    <a href=""
+                        class="leading-4 font-medium text-blue-800 hover:text-blue-900 border-l-2 py-2 pl-4 transition-colors duration-200">Contribute
+                        your
+                        article</a>
+                @endif
 
-                <x-dropdown align="right" width="48">
+                <x-dropdown align="right">
                     <x-slot name="trigger">
                         <button
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                            @if (Auth::check())
+                                <div>{{ Auth::user()->name }}</div>
+                            @else
+                                <div>Guest</div>
+                            @endif
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20">
@@ -53,25 +59,43 @@
                     <x-slot name="content">
                         {{-- Profile --}}
                         <div class="flex justify-between items-center space-x-2 p-2">
-                            <p
-                                class="m-0 min-w-10 min-h-10 rounded-full bg-blue-100 text-blue-500 uppercase font-semibold flex items-center justify-center select-none">
-                                B
-                            </p>
-                            <p class="text-xs text-gray-500" title="{{ Auth::user()->email }}">
-                                {{ Auth::user()->email }}</p>
+                            @if (Auth::check())
+                                <p
+                                    class="m-0 min-w-10 min-h-10 rounded-full bg-blue-100 text-blue-500 uppercase font-semibold flex items-center justify-center select-none">
+                                    B
+                                </p>
+                            @else
+                                <div class="w-16 select-none">
+                                    <img src="{{ asset('storage/images/guest.jpg') }}" alt="Logo"
+                                        class="w-full h-full rounded-full object-cover">
+                                </div>
+                            @endif
+                            @if (Auth::check())
+                                <p class="text-xs text-gray-500 truncate" title="{{ Auth::user()->email }}">
+                                    {{ Auth::user()->email }}</p>
+                            @else
+                                <p class="text-xs text-gray-500" title="Guest">Register to get access to all features
+                                </p>
+                            @endif
                         </div>
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault(); this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                        @if (Auth::check())
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Profile') }}
                             </x-dropdown-link>
-                        </form>
+
+                            <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
+                        @else
+                            <x-dropdown-link :href="route('register')">
+                                {{ __('Register') }}
+                            </x-dropdown-link>
+                        @endif
                     </x-slot>
                 </x-dropdown>
 
@@ -106,8 +130,10 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                @if (Auth::check())
+                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                @endif
             </div>
 
             <div class="mt-3 space-y-1">

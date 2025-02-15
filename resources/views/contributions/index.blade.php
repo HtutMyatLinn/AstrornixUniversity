@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contributions | University of Astrornix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-100">
+<x-app-layout>
     <div class="min-h-screen bg-[#5A7BAF]">
         <!-- Hero Section -->
         <div class="flex flex-col items-center justify-center px-4 py-20 text-center text-white">
@@ -148,6 +138,20 @@
             </div>
         </div>
     </div>
+</x-app-layout>
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributions | University of Astrornix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
 </body>
 
-</html>
+</html> --}}

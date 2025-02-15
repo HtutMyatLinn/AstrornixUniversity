@@ -2,47 +2,46 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $primaryKey = 'UserID';
+    public $incrementing = false;
+    protected $keyType = 'string';
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $fillable = ['Username', 'FirstName', 'LastName', 'Email', 'Password', 'FacultyID', 'RoleID', 'ProfileImage'];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    public function role()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->belongsTo(Role::class, 'RoleID');
+    }
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class, 'FacultyID');
+    }
+
+    public function contributions()
+    {
+        return $this->hasMany(Contribution::class, 'UserID');
+    }
+
+    public function inquiries()
+    {
+        return $this->hasMany(Inquiry::class, 'UserID');
+    }
+
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class, 'UserID');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'UserID');
     }
 }

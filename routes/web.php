@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::get('/contributions', function () {
     return view('contributions.index');
-});
+})->name('contributions');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

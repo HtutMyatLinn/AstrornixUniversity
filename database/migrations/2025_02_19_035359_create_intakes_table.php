@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign key relationship
-            $table->foreign('AcademicYearID')->references('AcademicYearID')->on('academic_years')->onDelete('cascade');
+            $table->foreign('AcademicYearID')->references('AcademicYearID')->on('academic_years')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

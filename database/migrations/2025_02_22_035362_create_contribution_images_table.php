@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign key constraint
-            $table->foreign('ContributionID')->references('ContributionID')->on('contributions')->onDelete('cascade');
+            $table->foreign('ContributionID')->references('ContributionID')->on('contributions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

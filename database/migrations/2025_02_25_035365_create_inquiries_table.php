@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign key relationship
-            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade');
+            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -26,9 +26,9 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign key relationships
-            $table->foreign('IntakeID')->references('IntakeID')->on('intakes')->onDelete('cascade');
-            $table->foreign('ContributionCategoryID')->references('ContributionCategoryID')->on('contribution_categories')->onDelete('cascade');
-            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade');
+            $table->foreign('IntakeID')->references('IntakeID')->on('intakes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('ContributionCategoryID')->references('ContributionCategoryID')->on('contribution_categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

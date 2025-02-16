@@ -26,8 +26,8 @@ return new class extends Migration
             $table->string('ProfileImage', 255)->nullable();
             $table->timestamps();
 
-            $table->foreign('FacultyID')->references('FacultyID')->on('faculties')->onDelete('set null');
-            $table->foreign('RoleID')->references('RoleID')->on('roles')->onDelete('cascade');
+            $table->foreign('FacultyID')->references('FacultyID')->on('faculties')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('RoleID')->references('RoleID')->on('roles')->onDelete('cascade')->onUpdate('cascade');
         });
     }
     /**

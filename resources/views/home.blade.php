@@ -9,7 +9,7 @@
 
         <!-- Image Section -->
         <div class="w-[400px] md:w-[600px] lg:w-[700px] h-[350px] md:h-[450px] lg:h-[500px]">
-            <img src="{{ asset('storage/images/809812e35ca241ddeca6bd1f191e857e.jfif') }}" alt="Book Cover"
+            <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}" alt="Book Cover"
                 class="w-full h-full object-cover">
         </div>
 
@@ -48,7 +48,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-2">
                     <!-- Large Image -->
                     <div class="relative col-span-1">
-                        <img src="{{ asset('storage/images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
+                        <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
                             class="w-full h-full object-cover" alt="Adventure">
                         <div class="absolute bottom-0 left-0 text-white p-4">
                             <span class="bg-[#5A7BAF] text-white px-2 py-1 text-sm">Adventure</span>
@@ -61,7 +61,7 @@
                     <div class="grid grid-cols-2">
                         <!-- Medium Image -->
                         <div class="relative col-span-2 md:col-span-2">
-                            <img src="{{ asset('storage/images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
+                            <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
                                 class="w-full h-full object-cover" alt="Business">
                             <div class="absolute bottom-0 left-0 text-white p-4">
                                 <span class="bg-[#5A7BAF] text-white px-2 py-1 text-sm">Business</span>
@@ -72,7 +72,7 @@
 
                         <!-- Two Smaller Images -->
                         <div class="relative col-span-1">
-                            <img src="{{ asset('storage/images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
+                            <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
                                 class="w-full h-full object-cover" alt="Digital">
                             <div class="absolute bottom-0 left-0 text-white p-4">
                                 <span class="bg-[#5A7BAF] text-white px-2 py-1 text-sm">Digital</span>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="relative col-span-1">
-                            <img src="{{ asset('storage/images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
+                            <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}"
                                 class="w-full h-full object-cover" alt="Digital">
                             <div class="absolute bottom-0 left-0 text-white p-4">
                                 <span class="bg-[#5A7BAF] text-white px-2 py-1 text-sm">Digital</span>
@@ -104,16 +104,16 @@
                     <!-- Book Card -->
                     <a href="" class="overflow-hidden flex flex-col items-center">
                         <div class="w-48">
-                            <img src="{{ asset('storage/images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}"
-                                alt="Book Cover" class="w-full h-70 object-cover rounded">
+                            <img src="{{ asset('images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}" alt="Book Cover"
+                                class="w-full h-70 object-cover rounded">
                         </div>
                         <p class="text-sm text-gray-600 mt-3">Lorem ipsum dolor sit amet consectetur.</p>
                     </a>
 
                     <a href="" class="overflow-hidden flex flex-col items-center">
                         <div class="w-48">
-                            <img src="{{ asset('storage/images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}"
-                                alt="Book Cover" class="w-full h-70 object-cover rounded">
+                            <img src="{{ asset('images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}" alt="Book Cover"
+                                class="w-full h-70 object-cover rounded">
                         </div>
                         <div class="px-4">
                             <h1 class="font-bold text-lg text-gray-900">Book Title</h1>
@@ -123,8 +123,8 @@
 
                     <a href="" class="overflow-hidden flex flex-col items-center">
                         <div class="w-48">
-                            <img src="{{ asset('storage/images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}"
-                                alt="Book Cover" class="w-full h-70 object-cover rounded">
+                            <img src="{{ asset('images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}" alt="Book Cover"
+                                class="w-full h-70 object-cover rounded">
                         </div>
                         <div class="px-4">
                             <h1 class="font-bold text-lg text-gray-900">Book Title</h1>
@@ -134,8 +134,8 @@
 
                     <a href="" class="overflow-hidden flex flex-col items-center">
                         <div class="w-48">
-                            <img src="{{ asset('storage/images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}"
-                                alt="Book Cover" class="w-full h-70 object-cover rounded">
+                            <img src="{{ asset('images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}" alt="Book Cover"
+                                class="w-full h-70 object-cover rounded">
                         </div>
                         <div class="px-4">
                             <h1 class="font-bold text-lg text-gray-900">Book Title</h1>
@@ -145,8 +145,8 @@
 
                     <a href="" class="overflow-hidden flex flex-col items-center">
                         <div class="w-48">
-                            <img src="{{ asset('storage/images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}"
-                                alt="Book Cover" class="w-full h-70 object-cover rounded">
+                            <img src="{{ asset('images/2e92a52a02cfe1c2bb1f75d5faf45fbb.jfif') }}" alt="Book Cover"
+                                class="w-full h-70 object-cover rounded">
                         </div>
                         <div class="px-4">
                             <h1 class="font-bold text-lg text-gray-900">Book Title</h1>

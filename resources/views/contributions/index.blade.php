@@ -89,7 +89,7 @@
                     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <!-- Card 1 -->
                         <div class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yhVsdKoVCnpTdmCf2qVzciDnTwXU5m.png"
+                            <img src="{{ asset('images/math.png')}}"
                                 alt="Mathematics textbook cover" class="h-48 w-full object-cover">
                             <div class="p-4">
                                 <h3 class="mb-2 text-lg font-semibold">Mathematics</h3>
@@ -104,7 +104,7 @@
 
                         <!-- Card 2 -->
                         <div class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yhVsdKoVCnpTdmCf2qVzciDnTwXU5m.png"
+                            <img src="{{ asset('images/math.png')}}"
                                 alt="Mathematics textbook cover" class="h-48 w-full object-cover">
                             <div class="p-4">
                                 <h3 class="mb-2 text-lg font-semibold">Mathematics</h3>
@@ -119,7 +119,7 @@
 
                         <!-- Card 3 -->
                         <div class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yhVsdKoVCnpTdmCf2qVzciDnTwXU5m.png"
+                            <img src="{{ asset('images/math.png')}}"
                                 alt="Mathematics textbook cover" class="h-48 w-full object-cover">
                             <div class="p-4">
                                 <h3 class="mb-2 text-lg font-semibold">Mathematics</h3>

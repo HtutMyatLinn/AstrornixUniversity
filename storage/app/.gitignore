@@ -1,4 +1,10 @@
+# Ignore everything
 *
+
+# Allow the private folder
 !private
-!public/Images
-!.gitignore
+
+# Allow the public/Images folder and its contents
+!public/
+!public/Images/
+!public/Images/*

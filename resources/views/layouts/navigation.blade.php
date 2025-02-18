@@ -67,7 +67,7 @@
                                 </p>
                             @else
                                 <div class="w-16 select-none">
-                                    <img src="{{ asset('storage/images/guest.jpg') }}" alt="Logo"
+                                    <img src="{{ asset('images/guest.jpg') }}" alt="Logo"
                                         class="w-full h-full rounded-full object-cover">
                                 </div>
                             @endif

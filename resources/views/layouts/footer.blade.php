@@ -3,7 +3,7 @@
         <!-- Left Side (Logo and Socials) -->
         <div class="w-full md:w-1/2 bg-white p-8 rounded-">
             <div class="w-40 select-none">
-                <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-full h-full object-cover">
             </div>
 
             <!-- Social Media -->

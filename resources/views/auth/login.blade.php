@@ -2,9 +2,9 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <div class="bg-white p-4 rounded-sm w-full h-screen flex flex-col sm:flex-row justify-center items-center">
+    <div class="bg-white p-4 rounded-sm w-full h-screen sm:h-full flex flex-col md:flex-row justify-center items-center">
         {{-- Left Section - Form --}}
-        <div class="w-full sm:w-1/2 pl-0 sm:pl-4 pr-0 sm:pr-8">
+        <div class="w-full md:w-1/2 pl-0 sm:pl-4 pr-0 sm:pr-8">
             {{-- Logo --}}
             <x-logo />
 
@@ -17,25 +17,29 @@
                 @csrf
 
                 {{-- Email --}}
-                <div>
+                <div class="relative">
                     <label for="email" class="block text-gray-700 font-semibold">University Email</label>
                     <input type="email" name="email" id="email"
                         class="mt-1 w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         placeholder="example@university.edu" value="{{ old('email') }}">
-                    @error('email')
-                        <p class="text-red-500 text-sm">{{ $message }}</p>
-                    @enderror
+                    <div class="absolute left-2 -bottom-2 bg-white">
+                        @error('email')
+                            <p class="text-red-500 text-sm">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
                 {{-- Password --}}
-                <div>
+                <div class="relative">
                     <label for="password" class="block text-gray-700 font-semibold">Password</label>
                     <input type="password" name="password" id="password"
                         class="mt-1 w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         placeholder="Enter a secure password">
-                    @error('password')
-                        <p class="text-red-500 text-sm">{{ $message }}</p>
-                    @enderror
+                    <div class="absolute left-2 -bottom-2 bg-white">
+                        @error('password')
+                            <p class="text-red-500 text-sm">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
                 <!-- Remember Me -->
@@ -69,7 +73,7 @@
         </div>
 
         {{-- Right Section - Image --}}
-        <div class="w-1/2 h-full relative hidden sm:block">
+        <div class="w-1/2 h-full relative hidden md:block">
             <!-- Background Image -->
             <img src="{{ asset('images/people-2562380_1280.jpg') }}" alt="University Magazine"
                 class="w-full h-full object-cover rounded-sm select-none">

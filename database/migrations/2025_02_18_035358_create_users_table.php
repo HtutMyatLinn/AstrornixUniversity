@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Email', 30)->unique();
             $table->string('Password', 255);
             $table->unsignedBigInteger('FacultyID')->nullable();
-            $table->unsignedBigInteger('RoleID');
+            $table->unsignedBigInteger('RoleID')->nullable();
             $table->date('LastLoginDate')->nullable();
             $table->date('LastPasswordChangedDate')->nullable();
             $table->date('PasswordExpiredDate')->nullable();

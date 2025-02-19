@@ -30,15 +30,39 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'Username' => ['required', 'string', 'max:30'],
+            'FirstName' => ['required', 'string', 'max:30'],
+            'LastName' => ['required', 'string', 'max:30'],
+            'Email' => ['required', 'string', 'email', 'max:30', 'unique:users,Email'],
+            'Password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'FacultyID' => ['nullable', 'exists:faculties,FacultyID'],
+            'RoleID' => ['required', 'exists:roles,RoleID'],
         ]);
 
+        // Get the last used UserID from the database
+        $lastUser = User::orderBy('UserID', 'desc')->first();
+
+        // Extract the numeric part of the last UserID
+        $lastUserId = $lastUser ? intval(substr($lastUser->UserID, 1)) : 0;
+
+        // Increment the numeric part
+        $newNumericPart = $lastUserId + 1;
+
+        // Generate the new UserID
+        $UserID = 'U' . str_pad($newNumericPart, 6, '0', STR_PAD_LEFT);
+
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'UserID' => $UserID, // Provide the generated UserID
+            'Username' => $request->Username,
+            'FirstName' => $request->FirstName,
+            'LastName' => $request->LastName,
+            'Email' => $request->Email,
+            'Password' => Hash::make($request->Password),
+            'FacultyID' => $request->FacultyID,
+            'RoleID' => $request->RoleID,
+            'LastLoginDate' => now(), // Set initial last login date
+            'LastPasswordChangedDate' => now(), // Set initial password change date
+            'PasswordExpiredDate' => now()->addMonths(2), // Set password expiration date (e.g., 6 months from now)
         ]);
 
         event(new Registered($user));

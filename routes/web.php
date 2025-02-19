@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // admin
-Route::get('/admin', [HomeController::class, 'administrator'])->middleware(['auth', 'admin']);
+Route::get('/admin', [HomeController::class, 'administrator']);
 
 // marketing manager
 Route::get('/marketing-manager', [HomeController::class, 'marketingManager'])->middleware(['auth', 'marketing-manager']);

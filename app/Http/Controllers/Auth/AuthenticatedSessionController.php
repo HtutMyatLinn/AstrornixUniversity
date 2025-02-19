@@ -24,12 +24,28 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $credentials = $request->only('email', 'password');
 
-        $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        return redirect()->intended(route('home', absolute: false));
+            $user = Auth::user();
+
+            if ($user->RoleID == '1') {
+                return redirect()->intended(route('admin'));
+            } elseif ($user->RoleID == '2') {
+                return redirect()->intended(route('marketing-manager'));
+            } elseif ($user->RoleID == '3') {
+                return redirect()->intended(route('marketing-coordinator'));
+            }
+            return redirect()->intended(route('home'));
+        }
+
+        return back()->withErrors([
+            'email' => 'These credentials do not match our records.',
+        ]);
     }
+
 
     /**
      * Destroy an authenticated session.

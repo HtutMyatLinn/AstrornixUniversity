@@ -17,9 +17,9 @@
                                     class="form-control @error('Username') is-invalid @enderror" name="Username"
                                     value="{{ old('Username') }}" autocomplete="Username" autofocus>
                                 @error('Username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -33,9 +33,9 @@
                                     class="form-control @error('FirstName') is-invalid @enderror" name="FirstName"
                                     value="{{ old('FirstName') }}" autocomplete="FirstName">
                                 @error('FirstName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -49,9 +49,9 @@
                                     class="form-control @error('LastName') is-invalid @enderror" name="LastName"
                                     value="{{ old('LastName') }}" autocomplete="LastName">
                                 @error('LastName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -65,9 +65,9 @@
                                     class="form-control @error('Email') is-invalid @enderror" name="Email"
                                     value="{{ old('Email') }}" autocomplete="Email">
                                 @error('Email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -81,9 +81,9 @@
                                     class="form-control @error('Password') is-invalid @enderror" name="Password"
                                     autocomplete="new-password">
                                 @error('Password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -109,9 +109,9 @@
                                     <option value="1">Math</option>
                                 </select>
                                 @error('FacultyID')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -124,12 +124,13 @@
                                 <select id="RoleID" class="form-control @error('RoleID') is-invalid @enderror"
                                     name="RoleID">
                                     <option value="">Select</option>
+                                    <!-- need to change 4 -->
                                     <option value="1">Student</option>
                                 </select>
                                 @error('RoleID')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>

@@ -4,6 +4,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// admin
+Route::get('/admin', [HomeController::class, 'administrator'])->middleware(['auth', 'admin']);
+
+// marketing manager
+Route::get('/marketing-manager', [HomeController::class, 'marketingManager'])->middleware(['auth', 'marketing-manager']);
+
+// marketing coordinator
+Route::get('/marketing-coordinator', [HomeController::class, 'marketingCoordinator'])->middleware(['auth', 'marketing-coordinator']);
+
+
 Route::get('/', function () {
     return view('home');
 });

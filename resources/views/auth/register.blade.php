@@ -106,7 +106,7 @@
                                 <select id="FacultyID" class="form-control @error('FacultyID') is-invalid @enderror"
                                     name="FacultyID">
                                     <option value="">Select Faculty</option>
-
+                                    <option value="1">Math</option>
                                 </select>
                                 @error('FacultyID')
                                     <span class="invalid-feedback" role="alert">
@@ -123,6 +123,7 @@
                             <div class="col-md-6">
                                 <select id="RoleID" class="form-control @error('RoleID') is-invalid @enderror"
                                     name="RoleID">
+                                    <option value="">Select</option>
                                     <option value="1">Student</option>
                                 </select>
                                 @error('RoleID')

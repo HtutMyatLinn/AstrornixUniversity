@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller
             'Email' => ['required', 'string', 'email', 'max:30', 'unique:users,Email'],
             'Password' => ['required', 'confirmed', Rules\Password::defaults()],
             'FacultyID' => ['nullable', 'exists:faculties,FacultyID'],
-            'RoleID' => ['required', 'exists:roles,RoleID'],
+            'RoleID' => ['nullable', 'exists:roles,RoleID'],
         ]);
 
         // Get the last used UserID from the database

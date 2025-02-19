@@ -1,5 +1,5 @@
 <nav x-data="{ open: false, isSticky: false }" x-on:scroll.window="isSticky = window.scrollY > 80" :class="{ 'shadow-sm': isSticky }"
-    class="transition-all duration-500 bg-white border-b sticky top-0 border-gray-100 z-50">
+    class="transition-all duration-500 bg-white border-b sticky top-0 border-gray-100 z-50 min-w-[350px]">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-[74px]">
@@ -18,6 +18,9 @@
                     </x-nav-link>
                     <x-nav-link :href="route('contributions')" :active="request()->routeIs('contributions')">
                         {{ __('Contributions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('contributions')">
+                        {{ __('Faculty') }}
                     </x-nav-link>
                     <x-nav-link :href="route('home')">
                         {{ __('About') }}

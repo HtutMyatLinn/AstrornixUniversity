@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('contribution_categories', function (Blueprint $table) {
-            $table->id('ContributionCategoryID'); // Auto-increment primary key
-            $table->string('ContributionCategory', 255); // Category name (e.g., poem, article, short stories)
+            $table->id('contribution_category_id'); // Auto-increment primary key
+            $table->string('contribution_category', 255); // Category name (e.g., poem, article, short stories)
             $table->timestamps();
         });
     }

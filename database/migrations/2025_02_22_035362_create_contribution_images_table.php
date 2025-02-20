@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('contribution_images', function (Blueprint $table) {
-            $table->id('ContributionImageID'); // Auto-increment primary key
-            $table->string('ContributionImagePath', 255); // Image file path
-            $table->unsignedBigInteger('ContributionID'); // Foreign key to contributions
+            $table->id('contribution_image_id'); // Auto-increment primary key
+            $table->string('contribution_image_path', 255); // Image file path
+            $table->unsignedBigInteger('contribution_id'); // Foreign key to contributions
             $table->timestamps();
 
             // Define foreign key constraint
-            $table->foreign('ContributionID')->references('ContributionID')->on('contributions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('contribution_id')->references('contribution_id')->on('contributions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -29,29 +29,29 @@ class RegisteredUserController extends Controller
     public function store(RegisterRequest $request): RedirectResponse
     {
         // Get the last used UserID from the database
-        $lastUser = User::orderBy('UserID', 'desc')->first();
+        $lastUser = User::orderBy('user_id', 'desc')->first();
 
         // Extract the numeric part of the last UserID
-        $lastUserId = $lastUser ? intval(substr($lastUser->UserID, 1)) : 0;
+        $lastUserId = $lastUser ? intval(substr($lastUser->user_id, 1)) : 0;
 
         // Increment the numeric part
         $newNumericPart = $lastUserId + 1;
 
         // Generate the new UserID
-        $UserID = 'U' . str_pad($newNumericPart, 6, '0', STR_PAD_LEFT);
+        $user_id = 'U' . str_pad($newNumericPart, 6, '0', STR_PAD_LEFT);
 
         $user = User::create([
-            'UserID' => $UserID,
-            'Username' => $request->username,
-            'FirstName' => $request->first_name,
-            'LastName' => $request->last_name,
-            'Email' => $request->email,
-            'Password' => Hash::make($request->password),
-            'FacultyID' => $request->facultyID,
-            'RoleID' => $request->roleID,
-            'LastLoginDate' => now(),
-            'LastPasswordChangedDate' => now(),
-            'PasswordExpiredDate' => now()->addMonths(2),
+            'user_id' => $user_id,
+            'username' => $request->username,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'faculty_id' => $request->facultyID,
+            'role_id' => $request->roleID,
+            'last_login_date' => now(),
+            'last_password_changed_date' => now(),
+            'password_expired_date' => now()->addMonths(2),
         ]);
 
         event(new Registered($user));

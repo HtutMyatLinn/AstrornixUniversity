@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('academic_years', function (Blueprint $table) {
-            $table->id('AcademicYearID'); // Auto-increment primary key
-            $table->string('AcademicYear', 20)->unique(); // Stores academic year (e.g. 2024-2025)
+            $table->id('academic_year_id'); // Auto-increment primary key
+            $table->string('academic_year', 20)->unique(); // Stores academic year (e.g. 2024-2025)
             $table->timestamps(); // Created_at & Updated_at
         });
     }

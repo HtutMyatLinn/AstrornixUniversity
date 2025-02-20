@@ -9,16 +9,16 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'CommentID';
-    protected $fillable = ['UserID', 'ContributionID', 'CommentText', 'CommentDate'];
+    protected $primaryKey = 'comment_id';
+    protected $fillable = ['user_id', 'contribution_id', 'comment_text', 'comment_date'];
 
     public function contribution()
     {
-        return $this->belongsTo(Contribution::class, 'ContributionID');
+        return $this->belongsTo(Contribution::class, 'contribution_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'UserID');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -9,11 +9,11 @@ class Inquiry extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'InquiryID';
-    protected $fillable = ['UserID', 'InquiryDate', 'InquiryStatus', 'PriorityLevel', 'ResponseDate'];
+    protected $primaryKey = 'inquiry_id';
+    protected $fillable = ['user_id', 'inquiry_date', 'inquiry_status', 'priority_level', 'response_date'];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'UserID');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

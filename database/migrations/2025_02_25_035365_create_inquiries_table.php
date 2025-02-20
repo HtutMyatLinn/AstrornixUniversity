@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inquiries', function (Blueprint $table) {
-            $table->id('InquiryID'); // Auto-increment primary key
-            $table->string('UserID', 7); // Foreign key to users
-            $table->timestamp('InquiryDate')->useCurrent(); // Inquiry date, default current timestamp
-            $table->string('InquiryStatus', 30)->default('Pending'); // Status: Pending / Resolved
-            $table->string('PriorityLevel', 30); // Priority: Low, Medium, High
-            $table->timestamp('ResponseDate')->nullable(); // Response date, nullable
+            $table->id('inquiry_id'); // Auto-increment primary key
+            $table->string('user_id', 7); // Foreign key to users
+            $table->string('priority_level', 30); // Priority: Low, Medium, High
+            $table->string('inquiry_status', 30)->default('Pending'); // Status: Pending / Resolved
+            $table->timestamp('inquiry_date')->useCurrent(); // Inquiry date, default current timestamp
+            $table->timestamp('response_date')->nullable(); // Response date, nullable
             $table->timestamps();
 
             // Define foreign key relationship
-            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

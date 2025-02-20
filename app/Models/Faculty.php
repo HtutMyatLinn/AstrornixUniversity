@@ -9,11 +9,11 @@ class Faculty extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'FacultyID';
-    protected $fillable = ['Faculty', 'ContactNumber'];
+    protected $primaryKey = 'faculty_id';
+    protected $fillable = ['faculty', 'contact_number'];
 
     public function users()
     {
-        return $this->hasMany(User::class, 'FacultyID');
+        return $this->hasMany(User::class, 'faculty_id');
     }
 }

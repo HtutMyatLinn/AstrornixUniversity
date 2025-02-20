@@ -22,19 +22,33 @@
 
             <!-- Department Lists -->
             <div class="flex justify-center gap-5 my-10">
-                <ul class="space-y-2 border-l px-7">
-                    <li>Home</li>
-                    <li>Contact Us</li>
-                    <li>About</li>
-                    <li>Departments</li>
-                    <li>Contributions</li>
+                <ul class="space-y-2 border-l px-7 flex flex-col">
+                    <a href="">Home</a>
+                    <a href="">Contact Us</a>
+                    <a href="">About</a>
+                    <a href="">Departments</a>
+                    <a href="">Contributions</a>
                 </ul>
-                <ul class="space-y-2 border-l px-7">
-                    <li>Terms and Conditions</li>
-                    <li>Youtube</li>
-                    <li>Twitter</li>
-                    <li>Facebook</li>
-                    <li>Skype</li>
+                <ul class="space-y-2 border-l px-7 flex flex-col">
+                    {{-- Determine User Role --}}
+                    @php
+                        $userRole = auth()->user()->role->Role ?? 'guest';
+                        $termsPdfPath =
+                            $userRole === 'student'
+                                ? 'pdfs/Term&Conditionforstudent.pdf'
+                                : 'pdfs/Term&Conditionforguest.pdf';
+
+                        $privacyPdfPath =
+                            $userRole === 'student'
+                                ? 'pdfs/PrivacyPolicyforStudents.pdf'
+                                : 'pdfs/PrivacyPolicyforGuests.pdf';
+                    @endphp
+
+                    <a href="{{ asset($termsPdfPath) }}" target="_blank">Terms and Conditions</a>
+                    <a href="{{ asset($privacyPdfPath) }}" target="_blank">Privacy Policy</a>
+                    <a href="">Twitter</a>
+                    <a href="">Facebook</a>
+                    <a href="">Skype</a>
                 </ul>
             </div>
 

@@ -16,11 +16,11 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::users()->RoleID != 1) {
+        if (Auth::users()->role_id != 1) {
             return response()->json(['message' => 'Unauthorized'], 401);
-        } elseif (Auth::users()->RoleID != 2) {
+        } elseif (Auth::users()->role_id != 2) {
             return response()->json(['message' => 'Unauthorized'], 401);
-        } elseif (Auth::users()->RoleID != 3) {
+        } elseif (Auth::users()->role_id != 3) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
         return $next($request);

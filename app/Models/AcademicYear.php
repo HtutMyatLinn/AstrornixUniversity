@@ -9,11 +9,11 @@ class AcademicYear extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'AcademicYearID';
-    protected $fillable = ['AcademicYear'];
+    protected $primaryKey = 'academic_year_id';
+    protected $fillable = ['academic_year'];
 
     public function intakes()
     {
-        return $this->hasMany(Intake::class, 'AcademicYearID');
+        return $this->hasMany(Intake::class, 'academic_year_id');
     }
 }

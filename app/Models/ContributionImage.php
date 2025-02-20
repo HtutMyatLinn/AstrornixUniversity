@@ -9,11 +9,11 @@ class ContributionImage extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'ContributionImageID';
-    protected $fillable = ['ContributionImagePath', 'ContributionID'];
+    protected $primaryKey = 'contribution_image_id';
+    protected $fillable = ['contribution_image_path', 'contribution_id'];
 
     public function contribution()
     {
-        return $this->belongsTo(Contribution::class, 'ContributionID');
+        return $this->belongsTo(Contribution::class, 'contribution_id');
     }
 }

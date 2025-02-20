@@ -9,16 +9,16 @@ class Feedback extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'FeedbackID';
-    protected $fillable = ['ContributionID', 'UserID', 'FeedbackGivenDate', 'Feedback'];
+    protected $primaryKey = 'feedback_id';
+    protected $fillable = ['contribution_id', 'user_id', 'feedback_given_date', 'feedback'];
 
     public function contribution()
     {
-        return $this->belongsTo(Contribution::class, 'ContributionID');
+        return $this->belongsTo(Contribution::class, 'contribution_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'UserID');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

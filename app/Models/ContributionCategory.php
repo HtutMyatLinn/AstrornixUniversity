@@ -9,11 +9,11 @@ class ContributionCategory extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'ContributionCategoryID';
-    protected $fillable = ['ContributionCategory'];
+    protected $primaryKey = 'contribution_category_id';
+    protected $fillable = ['contribution_category'];
 
     public function contributions()
     {
-        return $this->hasMany(Contribution::class, 'ContributionCategoryID');
+        return $this->hasMany(Contribution::class, 'contribution_category_id');
     }
 }

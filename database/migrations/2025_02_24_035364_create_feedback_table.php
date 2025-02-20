@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('feedback', function (Blueprint $table) {
-            $table->id('FeedbackID'); // Auto-increment primary key
-            $table->unsignedBigInteger('ContributionID'); // Foreign key to contributions
-            $table->string('UserID', 7); // Foreign key to users
-            $table->timestamp('FeedbackGivenDate')->useCurrent(); // Timestamp with current time
-            $table->string('Feedback', 255); // Feedback text
+            $table->id('feedback_id'); // Auto-increment primary key
+            $table->unsignedBigInteger('contribution_id'); // Foreign key to contributions
+            $table->string('user_id', 7); // Foreign key to users
+            $table->string('feedback', 255); // Feedback text
+            $table->timestamp('feedback_given_date')->useCurrent(); // Timestamp with current time
             $table->timestamps();
 
             // Define foreign key relationships
-            $table->foreign('ContributionID')->references('ContributionID')->on('contributions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('UserID')->references('UserID')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('contribution_id')->references('contribution_id')->on('contributions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

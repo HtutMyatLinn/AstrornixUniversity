@@ -12,22 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('UserID', 7)->primary();
-            $table->string('Username', 30);
-            $table->string('FirstName', 30);
-            $table->string('LastName', 30);
-            $table->string('Email', 30)->unique();
-            $table->string('Password', 255);
-            $table->unsignedBigInteger('FacultyID')->nullable();
-            $table->unsignedBigInteger('RoleID')->nullable();
-            $table->date('LastLoginDate')->nullable();
-            $table->date('LastPasswordChangedDate')->nullable();
-            $table->date('PasswordExpiredDate')->nullable();
-            $table->string('ProfileImage', 255)->nullable();
+            $table->string('user_id', 7)->primary();
+            $table->string('username', 30);
+            $table->string('first_name', 30);
+            $table->string('last_name', 30);
+            $table->string('email', 30)->unique();
+            $table->string('password', 255);
+            $table->string('profile_image', 255)->nullable();
+            $table->unsignedBigInteger('faculty_id')->nullable();
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->date('last_login_date')->nullable();
+            $table->date('last_password_changed_date')->nullable();
+            $table->date('password_expired_date')->nullable();
             $table->timestamps();
 
-            $table->foreign('FacultyID')->references('FacultyID')->on('faculties')->onDelete('set null')->onUpdate('cascade');
-            $table->foreign('RoleID')->references('RoleID')->on('roles')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('faculty_id')->references('faculty_id')->on('faculties')->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('role_id')->references('role_id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
         });
     }
     /**

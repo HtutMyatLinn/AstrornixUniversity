@@ -27,6 +27,18 @@ Route::get('/contributions', function () {
     return view('contributions.index');
 })->name('contributions');
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/contactus', function () {
+    return view('contactus');
+})->name('contactus');
+
+Route::get('/faculty', function () {
+    return view('faculty');
+})->name('faculty');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

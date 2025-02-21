@@ -19,13 +19,13 @@
                     <x-nav-link :href="route('contributions')" :active="request()->routeIs('contributions')">
                         {{ __('Contributions') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('contributions')">
+                    <x-nav-link :href="route('faculty')" :active="request()->routeIs('faculty')">
                         {{ __('Faculty') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('home')">
+                    <x-nav-link :href="route('aboutus')" :active="request()->routeIs('aboutus')">
                         {{ __('About') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('home')">
+                    <x-nav-link :href="route('contactus')" :active="request()->routeIs('contactus')">
                         {{ __('Contact') }}
                     </x-nav-link>
                 </div>

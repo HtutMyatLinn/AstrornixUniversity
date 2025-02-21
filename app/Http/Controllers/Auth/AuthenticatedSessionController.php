@@ -34,9 +34,9 @@ class AuthenticatedSessionController extends Controller
             if ($user->role_id == '1') {
                 return redirect()->intended(route('admin'));
             } elseif ($user->role_id == '2') {
-                return redirect()->intended(route('marketing-manager'));
+                return redirect()->intended(route('marketingmanager.marketing-manager')); // ✅ Correct route name
             } elseif ($user->role_id == '3') {
-                return redirect()->intended(route('marketing-coordinator'));
+                return redirect()->intended(route('marketingcoordinator.marketing-coordinator')); // ✅ Correct route name
             }
             return redirect()->intended(route('home'));
         }

@@ -31,13 +31,17 @@ class AuthenticatedSessionController extends Controller
 
             $user = Auth::user();
 
-            if ($user->role_id == '1') {
-                return redirect()->intended(route('admin'));
-            } elseif ($user->role_id == '2') {
-                return redirect()->intended(route('marketingmanager.marketing-manager')); // ✅ Correct route name
-            } elseif ($user->role_id == '3') {
-                return redirect()->intended(route('marketingcoordinator.marketing-coordinator')); // ✅ Correct route name
+            // Redirect user based on role
+            if ($user && $user->role) {
+                if ($user->role->role == 'Admin') {
+                    return redirect()->intended(route('admin'));
+                } elseif ($user->role->role == 'Marketing Manager') {
+                    return redirect()->intended(route('marketingmanager.marketing-manager'));
+                } elseif ($user->role->role == 'Marketing Coordinator') {
+                    return redirect()->intended(route('marketingcoordinator.marketing-coordinator'));
+                }
             }
+            // Redirect to home if user has no role
             return redirect()->intended(route('home'));
         }
 
@@ -45,7 +49,6 @@ class AuthenticatedSessionController extends Controller
             'email' => 'These credentials do not match our records.',
         ]);
     }
-
 
     /**
      * Destroy an authenticated session.

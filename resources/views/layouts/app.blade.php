@@ -28,7 +28,7 @@
             </header>
         @endisset
         <!-- Page Content -->
-        <main>
+        <main class="min-w-[420px]">
             {{ $slot }}
         </main>
         @include('layouts.footer')

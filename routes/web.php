@@ -16,8 +16,10 @@ Route::get('/admin/inquiry', [HomeController::class, 'administratorInquiry'])->n
 Route::get('/admin/edit-user-data', [HomeController::class, 'administratorEditUserData'])->name('admin.edit-user-data');
 
 // Marketing Manager & Coordinator
-Route::get('/marketing-manager', [HomeController::class, 'marketingManager'])->name('marketing.manager');
-Route::get('/marketing-coordinator', [HomeController::class, 'marketingCoordinator'])->name('marketing.coordinator');
+Route::get('/marketing-manager', [HomeController::class, 'marketingManager'])->name('marketingmanager.marketing-manager');
+Route::get('/marketing-coordinator', [HomeController::class, 'marketingCoordinator'])->name('marketingcoordinator.marketing-coordinator');
+
+
 
 Route::get('/', function () {
     return view('home');

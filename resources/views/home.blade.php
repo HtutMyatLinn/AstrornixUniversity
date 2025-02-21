@@ -1,6 +1,5 @@
 <x-app-layout>
-    <div
-        class="flex flex-col sm:flex-row justify-center items-center gap-6 px-6 bg-gray-100 rounded-lg shadow-md min-w-[350px]">
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 px-6 bg-gray-100 rounded-lg shadow-md">
         <!-- Title Section -->
         <div class="text-left text-xl font-semibold bg-blue-900 text-white p-4 pr-6">
             <p>17th</p>
@@ -8,20 +7,51 @@
             <p>Articles</p>
         </div>
 
-        <!-- Image Section -->
+        <!-- Image Swiper Section -->
         <div class="w-[400px] md:w-[600px] lg:w-[700px] h-[350px] md:h-[450px] lg:h-[500px] select-none">
-            <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}" alt="Book Cover"
-                class="w-full h-full object-cover">
+            <div class="swiper mySwiper w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}" alt="Book Cover 1"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/com.png') }}" alt="Book Cover 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('images/809812e35ca241ddeca6bd1f191e857e.jfif') }}" alt="Book Cover 3"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
 
         <!-- View Button -->
         <div class="flex items-center px-6 py-3">
-            <a href="" class="font-semibold underline underline-offset-4 transition duration-300">
+            <a href="#" class="font-semibold underline underline-offset-4 transition duration-300">
                 View
             </a>
             <i class="ri-arrow-right-long-line"></i>
         </div>
     </div>
+
+    <!-- Include SwiperJS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 
     <div class="px-3 sm:px-6 bg-white min-w-[350px]">
         {{-- Hero --}}

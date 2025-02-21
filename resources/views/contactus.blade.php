@@ -1,17 +1,8 @@
 <x-app-layout>
-    {{-- <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Poppins', sans-serif;
-            }
-        </style>
-    </head> --}}
-
     <!-- Hero Section (Top Cover Page) -->
     <div class="relative w-full h-[300px] md:h-[500px]">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/cov3.jpeg') }}');">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('{{ asset('images/cov3.jpeg') }}');">
             <div class="absolute inset-0 bg-black bg-opacity-20"></div> <!-- Overlay -->
         </div>
 
@@ -39,7 +30,8 @@
 
                 <!-- Info Message Inside the Box -->
                 <p class="text-gray-700 text-xs md:text-sm mb-3 md:mb-4">
-                    Have a question or need assistance? Fill out the form below, and our support team will get back to you within 24-48 hours.
+                    Have a question or need assistance? Fill out the form below, and our support team will get back to
+                    you within 24-48 hours.
                 </p>
 
                 <form action="#" method="POST" class="space-y-3 md:space-y-4">
@@ -55,7 +47,8 @@
                     <!-- Priority Level -->
                     <div>
                         <label class="block text-sm font-semibold">Priority Level</label>
-                        <select name="priority" class="w-full px-3 py-2 mt-1 border rounded-md focus:ring focus:ring-gray-300 text-sm md:text-base">
+                        <select name="priority"
+                            class="w-full px-3 py-2 mt-1 border rounded-md focus:ring focus:ring-gray-300 text-sm md:text-base">
                             <option>Low</option>
                             <option selected>Medium</option>
                             <option>High</option>
@@ -71,7 +64,8 @@
 
                     <!-- Help Tip Inside Contact Form -->
                     <p class="text-gray-600 text-xs md:text-sm">
-                        📌 **Tip:** Please provide as much detail as possible to help us resolve your inquiry efficiently.
+                        📌 **Tip:** Please provide as much detail as possible to help us resolve your inquiry
+                        efficiently.
                     </p>
 
                     <!-- Submit Button -->
@@ -126,6 +120,3 @@
         </div>
     </div>
 </x-app-layout>
-
-
-

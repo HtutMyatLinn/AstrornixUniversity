@@ -1,4 +1,4 @@
-<footer class="relative text-white bg-cover bg-center bg-no-repeat py-6"
+<footer class="relative text-white bg-cover bg-center bg-no-repeat py-6 min-w-[420px]"
     style="background-image: url('{{ asset('images/Group 56.png') }}');">
     <div class="flex flex-col md:flex-row px-8 pb-5">
         <!-- Left Side (Logo and Socials) -->
@@ -21,7 +21,7 @@
             <h3 class="text-2xl text-black font-semibold text-center">UNIVERSITY OF ASTRORNIX</h3>
 
             <!-- Department Lists -->
-            <div class="flex justify-center gap-5 my-10">
+            <div class="flex justify-center gap-10 sm:gap-32 my-10">
                 <ul class="space-y-2 border-l px-7 flex flex-col">
                     <a href="">Home</a>
                     <a href="">Contact Us</a>
@@ -32,7 +32,7 @@
                 <ul class="space-y-2 border-l px-7 flex flex-col">
                     {{-- Determine User Role --}}
                     @php
-                        $userRole = auth()->user()->role->Role ?? 'guest';
+                        $userRole = auth()->user()->role->role ?? 'guest';
                         $termsPdfPath =
                             $userRole === 'student'
                                 ? 'pdfs/Term&Conditionforstudent.pdf'

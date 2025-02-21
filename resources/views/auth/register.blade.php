@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <div class="bg-white p-4 rounded-sm w-full flex flex-col md:flex-row justify-center items-center">
+    <div class="bg-white p-4 rounded-sm w-full h-screen sm:h-full flex flex-col md:flex-row justify-center items-center">
 
         {{-- Left Section - Form --}}
         <div class="w-full md:w-1/2 pl-0 sm:pl-4 pr-0 sm:pr-8">
